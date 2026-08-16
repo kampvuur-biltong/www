@@ -1,0 +1,44 @@
+name: Site Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Lighthouse CI
+        run: npx --yes @lhci/cli@latest autorun --config=./lighthouserc.json
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install browser test runtime
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Start static site
+        run: |
+          node tests/static_server.mjs > /tmp/kampvuur-site.log 2>&1 &
+          sleep 2
+
+      - name: Responsive and UI interaction tests
+        run: python tests/ui_test.py

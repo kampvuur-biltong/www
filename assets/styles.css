@@ -244,3 +244,33 @@ button { font: inherit; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Quality hardening: touch UX, reduced render work, mobile menu and WhatsApp brand treatment. */
+.has-whatsapp-icon { gap: .55rem; }
+.whatsapp-icon {
+  width: 1.12rem;
+  height: 1.12rem;
+  flex: 0 0 1.12rem;
+  color: #25D366;
+  transform-origin: center;
+  transition: transform .2s var(--ease), filter .2s ease;
+}
+.has-whatsapp-icon:hover .whatsapp-icon { transform: scale(1.08) rotate(-3deg); }
+body.menu-open { overflow: hidden; overscroll-behavior: none; }
+.mobile-menu[aria-hidden="true"] { pointer-events: none; }
+.mobile-menu[aria-hidden="false"] { pointer-events: auto; }
+button, .button, .desktop-nav a, .mobile-menu a { touch-action: manipulation; }
+
+@supports (content-visibility: auto) {
+  .section, .site-footer { content-visibility: auto; contain-intrinsic-size: auto 720px; }
+}
+
+@media (hover: none) {
+  .button:hover, .product-card:hover { transform: none; }
+  .has-whatsapp-icon:hover .whatsapp-icon { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-icon { transition: none; }
+  .has-whatsapp-icon:hover .whatsapp-icon { transform: none; }
+}
