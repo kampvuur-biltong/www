@@ -1,0 +1,11 @@
+{
+  "name": "Kampvuur Biltong",
+  "short_name": "Kampvuur",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5efe4",
+  "theme_color": "#2b2119",
+  "icons": [
+    {"src":"/images/Untitled%20design%20-%203.png","sizes":"800x800","type":"image/png","purpose":"any maskable"}
+  ]
+}
