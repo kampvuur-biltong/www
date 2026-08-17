@@ -1,178 +1,1489 @@
-:root{
-  --black:#000;--white:#fff;--thunder:#231f20;--pearl:#e7dfd8;--fantasy:#fdfaf8;
-  --nutmeg:#7b4528;--copper:#c2783e;--soft:#cbc1ae;--bronze:#4a320d;--cararra:#e6e4dd;
-  --ink:#231f20;--line:#c2783e;--wrap:1190px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--white);color:var(--ink);line-height:1.45}
-img{display:block;max-width:100%}
-a{color:inherit}
-button,input{font:inherit}
-.wrap{width:min(var(--wrap),calc(100% - 48px));margin-inline:auto}
-.skip-link{position:fixed;left:1rem;top:-4rem;z-index:9999;background:#fff;color:#000;padding:.7rem 1rem}
-.skip-link:focus{top:1rem}
-.site-header{height:139px;background:#000;color:#fff;display:flex;align-items:center}
-.header-inner{display:grid;grid-template-columns:180px 1fr 42px;align-items:center;gap:20px}
-.brand img{width:178px;height:119px;object-fit:contain}
-.site-header nav{display:grid;grid-template-columns:repeat(4,1fr);align-items:center;text-align:center;gap:18px}
-.site-header nav a,.site-footer nav a{font-size:14.9px;font-weight:700;letter-spacing:1.25px;text-transform:uppercase;text-underline-offset:3px}
-.theme-toggle{width:34px;height:34px;border:1px solid #5d5652;background:transparent;color:#fff;border-radius:50%;cursor:pointer}
-.hero{height:614px;position:relative;overflow:hidden;background:var(--pearl);color:#fff}
-.hero-media{position:absolute;inset:0;overflow:hidden}
-.hero-media img{width:100%;height:1280px;object-fit:cover;object-position:center 55%;position:absolute;top:-358px;animation:figma-hero-pan 2s linear infinite}
-@keyframes figma-hero-pan{0%{transform:translateX(-200px);animation-timing-function:ease-out}25%,100%{transform:translateX(0)}}
-.hero-shade{position:absolute;inset:0;background:rgba(35,31,32,.39)}
-.hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-bottom:20px}
-.hero h1{font-size:73px;line-height:80px;margin:0 0 18px;font-weight:700}
-.hero p{font-size:26.4px;line-height:39px;letter-spacing:.53px;margin:0 0 28px}
-.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700}
-.btn-dark{background:#000;color:#fff;width:424px;height:90px;border-radius:12px;font-size:24px}
-.social-row{position:absolute;z-index:3;left:calc((100% - min(var(--wrap),calc(100% - 48px)))/2 + 135px);bottom:84px;display:flex;align-items:center;gap:18px;font-weight:700}
-.social-row a{width:28px;height:28px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.72);border-radius:50%;font-size:11px;text-decoration:none}
-.social-row span{font-size:15px;color:#231f20}
-.section-light{background:var(--fantasy)}
-.buyers{min-height:755px;padding:76px 0 70px}
-.two-col{display:grid;grid-template-columns:1.15fr .78fr;gap:78px;align-items:start}
-.copy-block h2{color:var(--nutmeg);font-size:40px;line-height:1.38;letter-spacing:3.36px;margin:0 0 22px}
-.copy-block p{font-size:18.8px;line-height:28px;letter-spacing:1.71px;margin:0 0 26px}
-.strong-caps{font-weight:700;text-transform:uppercase;font-size:19.8px!important}
-.portrait{margin:0;justify-self:center}
-.portrait img{width:440px;height:598px;object-fit:cover}
-.steps{height:516px;background:var(--nutmeg);color:#fff;padding:42px 0}
-.steps h2{text-align:center;font-size:46.7px;line-height:65px;letter-spacing:3.92px;margin:0}
-.handline{text-align:center;font-size:52.3px;line-height:50px;margin:-11px 0 35px;transform:rotate(-4.09deg)}
-.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;width:1222px;max-width:100%;margin:0 auto}
-.step-grid article{height:250px;background:#fafbff;color:#000;border-radius:16px;padding:16px 28px 24px;display:flex;flex-direction:column}
-.step-grid b{font-size:73px;line-height:109px;color:var(--soft);text-align:center;font-weight:700}
-.step-grid h3{font-size:20px;line-height:30px;margin:-2px 0 7px}
-.step-grid p{font-size:15px;line-height:21.8px;margin:0}
-.products{background:var(--pearl);min-height:1645px;padding:110px 0 96px}
-.kicker{font-size:16.4px;line-height:24.6px;color:var(--copper);font-weight:700}
-.products>.wrap>.kicker{text-align:center;margin:0 0 20px}
-.products h2{text-align:center;font-size:46.3px;line-height:64.9px;letter-spacing:3.93px;margin:0 0 54px;color:#000}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:78px 55px}
-.product-grid article{text-align:center;color:#000;min-height:350px}
-.product-grid img{height:181px;width:272px;object-fit:contain;margin:0 auto 24px;mix-blend-mode:multiply}
-.product-grid h3{font-size:30.4px;line-height:42.1px;letter-spacing:2.55px;margin:0 0 16px}
-.product-grid p{font-size:16.3px;line-height:19.3px;letter-spacing:1.47px;margin:0 auto;max-width:360px}
-.laser-space{height:181px}
-.about{min-height:782px;padding:88px 0 68px}
-.about-grid{grid-template-columns:1.42fr .72fr;align-items:center}
-.about .copy-block h2{color:var(--copper);font-size:57.2px;line-height:79.4px;letter-spacing:4.8px;margin-bottom:4px}
-.about .copy-block p{font-size:22px;line-height:33px;letter-spacing:2.03px;margin-bottom:30px}
-.portrait-about img{width:372px;height:522px}
-.callback{min-height:683px;background:var(--bronze);padding:45px 0}
-.callback-grid{display:grid;grid-template-columns:497px 1fr;align-items:center;justify-content:center;width:min(1159px,calc(100% - 48px));margin:auto}
-.callback-card{height:592px;border:3px solid var(--soft);border-radius:16px;background:#fafbff;padding:34px;position:relative;z-index:2}
-.callback-card h2{font-family:Montserrat,Inter,Arial,sans-serif;font-size:34.2px;line-height:47.5px;margin:0 0 22px}
-.callback-card label{display:block;font-family:Montserrat,Inter,Arial,sans-serif;font-size:17.5px;font-weight:700;margin:0 0 20px}
-.callback-card input{display:block;width:100%;height:46px;margin-top:8px;border:1px solid rgba(35,31,32,.6);border-radius:8px;background:#fff;padding:0 12px}
-.callback-card button{width:100%;height:49px;border:0;border-radius:24px;background:rgba(203,193,174,.4);font-weight:700;font-size:20.4px;cursor:pointer}
-.callback-card small{display:block;text-align:center;margin-top:8px;color:#4e4b4d;font-size:10.9px}
-.callback-photo{height:547px;width:714px;object-fit:cover}
-.gift{min-height:730px;background:var(--cararra) url('gift-texture.jpg') repeat;padding:30px 0 15px;position:relative;overflow:hidden}
-.gift-inner{position:relative;height:685px}
-.gift-title{position:absolute;left:0;top:0;display:flex;flex-direction:column;line-height:.87}
-.gift-title span{font-size:48px;color:#000}
-.gift-title strong{font-size:88px;font-weight:400;color:var(--copper);letter-spacing:-2.64px}
-.call-now{position:absolute;right:0;top:42px;width:300px;height:50px;display:grid;place-items:center;background:var(--copper);color:#fff;text-decoration:none;font-weight:700;font-size:18.7px}
-.gift h2{position:absolute;top:65px;left:230px;width:760px;text-align:center;font-size:61.4px;font-weight:400;line-height:59.6px;transform:rotate(-4.09deg);margin:0}
-.scribble{position:absolute;top:166px;left:540px;width:280px;border-top:5px solid #000;transform:rotate(-7deg);border-radius:50%}
-.gift img{position:absolute;width:646px;height:430px;object-fit:cover;left:50%;bottom:26px;transform:translateX(-50%);mix-blend-mode:multiply}
-.gift-meta{position:absolute;bottom:39px;left:0;right:0;display:flex;justify-content:space-between;text-transform:uppercase;font-size:16.5px;letter-spacing:.16px;padding-inline:58px}
-.faq{min-height:689px;background:#fff;padding:58px 0 52px;border-top:2px solid var(--copper)}
-.faq-grid{display:grid;grid-template-columns:501px 1fr;gap:66px}
-.faq-intro .kicker{margin:0 0 9px}
-.faq-intro h2{font-size:38.7px;line-height:43.1px;letter-spacing:3.25px;margin:0 0 23px}
-.faq-intro img{width:472px;height:335px;object-fit:cover}
-.faq-list article{padding:0 0 22px;margin:0 0 12px;border-bottom:1px solid var(--copper)}
-.faq-list article:last-child{border-bottom:0}
-.faq-list h3{font-size:22.6px;line-height:33px;letter-spacing:.45px;margin:0 0 11px}
-.faq-list p{font-size:16.5px;line-height:19.65px;letter-spacing:1.5px;margin:0}
-.site-footer{height:166px;background:var(--thunder);color:#fff}
-.footer-inner{height:100%;display:grid;grid-template-columns:178px 342px 1fr;gap:38px;align-items:center}
-.footer-inner>img{width:178px;height:119px;object-fit:contain}
-.footer-inner p{font-size:16.3px;line-height:19px;letter-spacing:1.47px}
-.footer-inner nav{display:flex;gap:42px;justify-content:flex-end}
-html[data-theme="dark"] body{background:#161311;color:#f7f2ec}
-html[data-theme="dark"] .buyers,html[data-theme="dark"] .about,html[data-theme="dark"] .faq{background:#1c1917;color:#f7f2ec}
-html[data-theme="dark"] .products{background:#2b241f}
-html[data-theme="dark"] .products h2,html[data-theme="dark"] .product-grid article,html[data-theme="dark"] .copy-block p,html[data-theme="dark"] .faq-list p,html[data-theme="dark"] .faq-list h3{color:#f7f2ec}
-html[data-theme="dark"] .product-grid img{mix-blend-mode:normal}
-html[data-theme="dark"] .gift{filter:brightness(.82) saturate(.9)}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.hero-media img{animation:none!important;transform:none!important}}
-@media(max-width:980px){
-  .site-header{height:auto;min-height:104px;padding:8px 0}
-  .header-inner{grid-template-columns:110px 1fr 38px}
-  .brand img{width:110px;height:82px}
-  .site-header nav{gap:8px}
-  .site-header nav a{font-size:11px}
-  .hero{height:600px}
-  .hero h1{font-size:56px;line-height:1}
-  .hero p{font-size:20px;line-height:1.45}
-  .social-row{left:28px}
-  .two-col,.about-grid{grid-template-columns:1fr 360px;gap:40px}
-  .copy-block p{font-size:16px;line-height:1.55;letter-spacing:.8px}
-  .steps{height:auto;padding-bottom:55px}
-  .step-grid{grid-template-columns:1fr;max-width:560px}
-  .step-grid article{height:auto;min-height:220px}
-  .products{min-height:0}
-  .product-grid{grid-template-columns:repeat(2,1fr)}
-  .callback-grid{grid-template-columns:1fr;width:min(720px,calc(100% - 40px))}
-  .callback{padding:40px 0}
-  .callback-card{height:auto}
-  .callback-photo{width:100%;height:390px}
-  .gift-inner{height:700px}
-  .gift h2{left:50%;transform:translateX(-50%) rotate(-4deg);top:145px;width:90%}
-  .gift-title{left:24px}
-  .call-now{right:24px}
-  .faq-grid{grid-template-columns:1fr;gap:40px}
-  .faq-intro img{max-width:100%;height:auto}
-  .footer-inner{grid-template-columns:140px 1fr;gap:20px}
-  .footer-inner nav{grid-column:1/-1;justify-content:center;margin-top:-28px}
-}
-@media(max-width:680px){
-  .wrap{width:min(100% - 28px,1190px)}
-  .site-header{min-height:92px}
-  .header-inner{grid-template-columns:88px 1fr 34px}
-  .brand img{width:88px;height:66px}
-  .site-header nav{display:grid;grid-template-columns:repeat(2,1fr);gap:4px 10px}
-  .site-header nav a{font-size:9.8px;letter-spacing:.5px}
-  .hero{height:570px}
-  .hero-media img{height:720px;top:-80px;object-position:center}
-  .hero h1{font-size:43px;line-height:1.06}
-  .hero p{font-size:17px;line-height:1.45;padding:0 18px}
-  .btn-dark{width:min(90%,340px);height:64px;font-size:19px}
-  .social-row{display:none}
-  .desktop-only{display:none}
-  .buyers,.about{padding:56px 0}
-  .two-col,.about-grid{grid-template-columns:1fr}
-  .copy-block h2,.about .copy-block h2{font-size:34px;line-height:1.2;letter-spacing:2px}
-  .portrait{order:2}
-  .portrait img,.portrait-about img{width:100%;height:auto;max-height:none}
-  .steps h2{font-size:32px;line-height:1.22}
-  .handline{font-size:38px;margin:6px 0 28px}
-  .products{padding:70px 0}
-  .products h2{font-size:34px;line-height:1.2;letter-spacing:2px}
-  .product-grid{grid-template-columns:1fr;gap:46px}
-  .product-grid article{min-height:0}
-  .callback-card{padding:28px 22px}
-  .callback-card h2{font-size:28px;line-height:1.25}
-  .callback-photo{height:300px}
-  .gift{min-height:680px}
-  .gift-inner{height:630px}
-  .gift-title{top:8px;left:6px}
-  .gift-title span{font-size:28px}.gift-title strong{font-size:52px}
-  .call-now{top:20px;right:5px;width:150px;height:42px;font-size:14px}
-  .gift h2{top:115px;font-size:42px;line-height:1.1}
-  .scribble{top:186px;left:50%;transform:translateX(-50%) rotate(-7deg);width:180px}
-  .gift img{width:100%;height:auto;bottom:75px}
-  .gift-meta{font-size:11px;padding:0 10px}
-  .faq-intro h2{font-size:32px;line-height:1.2}
-  .footer-inner{grid-template-columns:100px 1fr;gap:16px}
-  .footer-inner>img{width:100px;height:76px}
-  .footer-inner p{font-size:11px;line-height:1.4}
-  .footer-inner nav{gap:14px;flex-wrap:wrap}
-  .site-footer nav a{font-size:9px}
-}
+/**
+ * Kampvuur Biltong
+ * Global UI runtime
+ *
+ * Responsibilities:
+ * - Browser/favicon branding
+ * - Light/dark theme
+ * - Sticky / scroll-aware header
+ * - Active navigation scroll-spy
+ * - Accessible mobile navigation drawer
+ * - Hero background video
+ * - Hero CTA enhancement
+ * - Reduced-motion handling
+ * - Scroll reveal effects
+ * - Back-to-top control
+ * - Footer year
+ * - Placeholder-link protection
+ * - WhatsApp callback form
+ *
+ * No external dependencies.
+ */
+
+(() => {
+  'use strict';
+
+  const doc = document;
+  const root = doc.documentElement;
+  const body = doc.body;
+
+  root.classList.add('js');
+
+  const qs = (selector, context = doc) =>
+    context.querySelector(selector);
+
+  const qsa = (selector, context = doc) =>
+    Array.from(context.querySelectorAll(selector));
+
+  const reducedMotion = window.matchMedia
+    ? window.matchMedia('(prefers-reduced-motion: reduce)')
+    : null;
+
+  const desktopNavigation = window.matchMedia
+    ? window.matchMedia('(min-width: 821px)')
+    : null;
+
+  const MASTER_ICON =
+    'images/figma/1bdd38e5bc3a72b05d4523ff23ff56c8.png.png';
+
+  const HERO_VIDEO =
+    'images/Kampvuur%20Biltong.mp4';
+
+  const HERO_POSTER =
+    'assets/hero-campfire.webp';
+
+  const PHONE_NUMBER =
+    '27726275503';
+
+  /* ============================================================
+     Utilities
+     ============================================================ */
+
+  const safeStorage = {
+    get(key) {
+      try {
+        return window.localStorage.getItem(key);
+      } catch {
+        return null;
+      }
+    },
+
+    set(key, value) {
+      try {
+        window.localStorage.setItem(key, value);
+      } catch {
+        // Storage may be blocked; UI remains functional.
+      }
+    }
+  };
+
+  const rafThrottle = (callback) => {
+    let queued = false;
+
+    return (...args) => {
+      if (queued) return;
+
+      queued = true;
+
+      window.requestAnimationFrame(() => {
+        callback(...args);
+        queued = false;
+      });
+    };
+  };
+
+  const escapeHtml = (value) =>
+    String(value)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+
+  /* ============================================================
+     Browser / favicon branding
+     ============================================================ */
+
+  const initBrowserBranding = () => {
+    const existingIcons = qsa(
+      'link[rel="icon"], link[rel="shortcut icon"]'
+    );
+
+    if (existingIcons.length) {
+      existingIcons.forEach((icon) => {
+        icon.href = MASTER_ICON;
+        icon.type = 'image/png';
+      });
+    } else {
+      const icon = doc.createElement('link');
+
+      icon.rel = 'icon';
+      icon.type = 'image/png';
+      icon.href = MASTER_ICON;
+
+      doc.head.appendChild(icon);
+    }
+
+    let appleIcon = qs('link[rel="apple-touch-icon"]');
+
+    if (!appleIcon) {
+      appleIcon = doc.createElement('link');
+      appleIcon.rel = 'apple-touch-icon';
+      doc.head.appendChild(appleIcon);
+    }
+
+    appleIcon.href = MASTER_ICON;
+  };
+
+  /* ============================================================
+     Theme
+     ============================================================ */
+
+  const initTheme = () => {
+    const toggle = qs('[data-theme-toggle]');
+    const themeMeta = qs('meta[name="theme-color"]');
+
+    const saved = safeStorage.get('kampvuur-theme');
+
+    const systemDark =
+      window.matchMedia?.('(prefers-color-scheme: dark)')
+        .matches ?? false;
+
+    const initial =
+      saved === 'dark' || saved === 'light'
+        ? saved
+        : systemDark
+          ? 'dark'
+          : 'light';
+
+    const themeIcon = (theme) => {
+      if (theme === 'dark') {
+        return `
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        `;
+      }
+
+      return `
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M21 12.79A9 9 0 1 1 11.21 3
+               7 7 0 0 0 21 12.79Z"
+          ></path>
+        </svg>
+      `;
+    };
+
+    const applyTheme = (theme) => {
+      root.dataset.theme = theme;
+
+      if (themeMeta) {
+        themeMeta.content =
+          theme === 'dark'
+            ? '#161311'
+            : '#231f20';
+      }
+
+      if (toggle) {
+        const next =
+          theme === 'dark'
+            ? 'light'
+            : 'dark';
+
+        toggle.setAttribute(
+          'aria-label',
+          `Switch to ${next} theme`
+        );
+
+        toggle.setAttribute(
+          'title',
+          `Switch to ${next} theme`
+        );
+
+        toggle.setAttribute(
+          'aria-pressed',
+          theme === 'dark'
+            ? 'true'
+            : 'false'
+        );
+
+        toggle.innerHTML = themeIcon(theme);
+      }
+    };
+
+    applyTheme(initial);
+
+    toggle?.addEventListener('click', () => {
+      const next =
+        root.dataset.theme === 'dark'
+          ? 'light'
+          : 'dark';
+
+      applyTheme(next);
+      safeStorage.set('kampvuur-theme', next);
+    });
+  };
+
+  /* ============================================================
+     Sticky / scroll-aware header
+     ============================================================ */
+
+  const initHeader = () => {
+    const header = qs('.site-header');
+
+    if (!header) return;
+
+    let previousY = window.scrollY;
+    let hidden = false;
+
+    const update = () => {
+      const currentY = Math.max(0, window.scrollY);
+
+      header.classList.toggle(
+        'is-scrolled',
+        currentY > 32
+      );
+
+      const movingDown =
+        currentY > previousY + 7;
+
+      const movingUp =
+        currentY < previousY - 7;
+
+      const navigationOpen =
+        body.classList.contains('nav-open');
+
+      const keyboardInside =
+        header.contains(doc.activeElement);
+
+      if (
+        movingDown &&
+        currentY > 260 &&
+        !navigationOpen &&
+        !keyboardInside
+      ) {
+        hidden = true;
+      }
+
+      if (
+        movingUp ||
+        currentY < 120 ||
+        navigationOpen ||
+        keyboardInside
+      ) {
+        hidden = false;
+      }
+
+      header.classList.toggle(
+        'is-hidden',
+        hidden
+      );
+
+      previousY = currentY;
+    };
+
+    const throttled = rafThrottle(update);
+
+    window.addEventListener(
+      'scroll',
+      throttled,
+      { passive: true }
+    );
+
+    window.addEventListener(
+      'resize',
+      throttled,
+      { passive: true }
+    );
+
+    update();
+  };
+
+  /* ============================================================
+     Active navigation / scroll spy
+     ============================================================ */
+
+  const initScrollSpy = () => {
+    const sectionIds = [
+      'how-it-works',
+      'about',
+      'products',
+      'faq'
+    ];
+
+    const sections = sectionIds
+      .map((id) => doc.getElementById(id))
+      .filter(Boolean);
+
+    if (
+      !sections.length ||
+      !('IntersectionObserver' in window)
+    ) {
+      return;
+    }
+
+    let activeId = '';
+
+    const setActive = (id) => {
+      if (!id || activeId === id) return;
+
+      activeId = id;
+
+      qsa(
+        '.site-header a[href^="#"], ' +
+        '.mobile-nav-drawer a[href^="#"]'
+      ).forEach((link) => {
+        const isActive =
+          link.getAttribute('href') === `#${id}`;
+
+        link.classList.toggle(
+          'is-active',
+          isActive
+        );
+
+        if (isActive) {
+          link.setAttribute(
+            'aria-current',
+            'location'
+          );
+        } else {
+          link.removeAttribute(
+            'aria-current'
+          );
+        }
+      });
+    };
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter(
+              (entry) =>
+                entry.isIntersecting
+            )
+            .sort(
+              (a, b) =>
+                b.intersectionRatio -
+                a.intersectionRatio
+            );
+
+          if (visible[0]) {
+            setActive(
+              visible[0].target.id
+            );
+          }
+        },
+        {
+          rootMargin:
+            '-24% 0px -58% 0px',
+          threshold: [
+            0.05,
+            0.15,
+            0.3,
+            0.5
+          ]
+        }
+      );
+
+    sections.forEach(
+      (section) =>
+        observer.observe(section)
+    );
+  };
+
+  /* ============================================================
+     Mobile navigation
+     ============================================================ */
+
+  const initMobileNavigation = () => {
+    const header = qs('.site-header');
+    const headerInner =
+      qs('.header-inner', header);
+
+    const primaryNav =
+      qs(
+        'nav[aria-label="Primary navigation"]',
+        header
+      );
+
+    const themeToggle =
+      qs('[data-theme-toggle]', header);
+
+    if (
+      !header ||
+      !headerInner ||
+      !primaryNav
+    ) {
+      return;
+    }
+
+    const menuButton =
+      doc.createElement('button');
+
+    menuButton.type = 'button';
+    menuButton.className = 'menu-toggle';
+
+    menuButton.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
+    menuButton.setAttribute(
+      'aria-controls',
+      'kampvuur-mobile-navigation'
+    );
+
+    menuButton.setAttribute(
+      'aria-label',
+      'Open navigation menu'
+    );
+
+    menuButton.innerHTML = `
+      <span class="menu-toggle-lines" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    `;
+
+    if (themeToggle) {
+      headerInner.insertBefore(
+        menuButton,
+        themeToggle
+      );
+    } else {
+      headerInner.appendChild(
+        menuButton
+      );
+    }
+
+    const backdrop =
+      doc.createElement('button');
+
+    backdrop.type = 'button';
+    backdrop.className =
+      'mobile-nav-backdrop';
+
+    backdrop.setAttribute(
+      'aria-label',
+      'Close navigation menu'
+    );
+
+    backdrop.tabIndex = -1;
+
+    const drawer =
+      doc.createElement('aside');
+
+    drawer.className =
+      'mobile-nav-drawer';
+
+    drawer.id =
+      'kampvuur-mobile-navigation';
+
+    drawer.setAttribute(
+      'aria-label',
+      'Mobile navigation'
+    );
+
+    drawer.setAttribute(
+      'aria-hidden',
+      'true'
+    );
+
+    const brandImage =
+      qs('.brand img', header);
+
+    const brandMarkup =
+      brandImage
+        ? `
+          <a
+            class="mobile-nav-brand"
+            href="#top"
+            aria-label="Kampvuur Biltong home"
+          >
+            <img
+              src="${escapeHtml(
+                brandImage.getAttribute('src') ||
+                'assets/logo.png'
+              )}"
+              alt="Kampvuur Biltong"
+            >
+          </a>
+        `
+        : '';
+
+    const navLinks =
+      qsa('a', primaryNav)
+        .map((link) => {
+          const href =
+            link.getAttribute('href') || '#';
+
+          const label =
+            link.textContent.trim();
+
+          return `
+            <a href="${escapeHtml(href)}">
+              <span>${escapeHtml(label)}</span>
+              <span
+                class="mobile-nav-arrow"
+                aria-hidden="true"
+              >→</span>
+            </a>
+          `;
+        })
+        .join('');
+
+    drawer.innerHTML = `
+      <div class="mobile-nav-head">
+        ${brandMarkup}
+
+        <button
+          class="mobile-nav-close"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <nav aria-label="Mobile primary navigation">
+        ${navLinks}
+      </nav>
+
+      <div class="mobile-nav-actions">
+        <a
+          class="mobile-nav-cta"
+          href="#products"
+        >
+          Discover Our Biltong
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a
+          class="mobile-nav-contact"
+          href="tel:+${PHONE_NUMBER}"
+        >
+          Call Kampvuur
+        </a>
+      </div>
+
+      <p class="mobile-nav-tagline">
+        The Taste of Tradition
+      </p>
+    `;
+
+    body.appendChild(backdrop);
+    body.appendChild(drawer);
+
+    const closeButton =
+      qs('.mobile-nav-close', drawer);
+
+    let previousFocus = null;
+
+    const focusableSelector = [
+      'a[href]',
+      'button:not([disabled])',
+      '[tabindex]:not([tabindex="-1"])'
+    ].join(',');
+
+    const getFocusable = () =>
+      qsa(
+        focusableSelector,
+        drawer
+      ).filter(
+        (element) =>
+          !element.hasAttribute(
+            'disabled'
+          )
+      );
+
+    const openMenu = () => {
+      previousFocus =
+        doc.activeElement;
+
+      body.classList.add(
+        'nav-open'
+      );
+
+      menuButton.classList.add(
+        'is-active'
+      );
+
+      menuButton.setAttribute(
+        'aria-expanded',
+        'true'
+      );
+
+      menuButton.setAttribute(
+        'aria-label',
+        'Close navigation menu'
+      );
+
+      drawer.setAttribute(
+        'aria-hidden',
+        'false'
+      );
+
+      qs('main')?.setAttribute(
+        'inert',
+        ''
+      );
+
+      qs('.site-footer')?.setAttribute(
+        'inert',
+        ''
+      );
+
+      window.requestAnimationFrame(
+        () => {
+          closeButton?.focus();
+        }
+      );
+    };
+
+    const closeMenu = ({
+      restoreFocus = true
+    } = {}) => {
+      body.classList.remove(
+        'nav-open'
+      );
+
+      menuButton.classList.remove(
+        'is-active'
+      );
+
+      menuButton.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      menuButton.setAttribute(
+        'aria-label',
+        'Open navigation menu'
+      );
+
+      drawer.setAttribute(
+        'aria-hidden',
+        'true'
+      );
+
+      qs('main')?.removeAttribute(
+        'inert'
+      );
+
+      qs('.site-footer')
+        ?.removeAttribute('inert');
+
+      if (
+        restoreFocus &&
+        previousFocus instanceof
+          HTMLElement
+      ) {
+        previousFocus.focus();
+      }
+    };
+
+    menuButton.addEventListener(
+      'click',
+      () => {
+        if (
+          body.classList.contains(
+            'nav-open'
+          )
+        ) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      }
+    );
+
+    closeButton?.addEventListener(
+      'click',
+      () => closeMenu()
+    );
+
+    backdrop.addEventListener(
+      'click',
+      () => closeMenu()
+    );
+
+    qsa('a', drawer).forEach(
+      (link) => {
+        link.addEventListener(
+          'click',
+          () =>
+            closeMenu({
+              restoreFocus: false
+            })
+        );
+      }
+    );
+
+    doc.addEventListener(
+      'keydown',
+      (event) => {
+        if (
+          !body.classList.contains(
+            'nav-open'
+          )
+        ) {
+          return;
+        }
+
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          closeMenu();
+          return;
+        }
+
+        if (event.key !== 'Tab') {
+          return;
+        }
+
+        const focusable =
+          getFocusable();
+
+        if (!focusable.length) {
+          return;
+        }
+
+        const first =
+          focusable[0];
+
+        const last =
+          focusable[
+            focusable.length - 1
+          ];
+
+        if (
+          event.shiftKey &&
+          doc.activeElement === first
+        ) {
+          event.preventDefault();
+          last.focus();
+        } else if (
+          !event.shiftKey &&
+          doc.activeElement === last
+        ) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    );
+
+    desktopNavigation
+      ?.addEventListener?.(
+        'change',
+        (event) => {
+          if (event.matches) {
+            closeMenu({
+              restoreFocus: false
+            });
+          }
+        }
+      );
+  };
+
+  /* ============================================================
+     Hero video
+     ============================================================ */
+
+  const initHeroVideo = () => {
+    const hero =
+      qs('.hero');
+
+    const media =
+      qs('.hero-media', hero);
+
+    const poster =
+      qs('img', media);
+
+    if (
+      !hero ||
+      !media ||
+      !poster
+    ) {
+      return;
+    }
+
+    poster.classList.add(
+      'hero-poster'
+    );
+
+    poster.setAttribute(
+      'loading',
+      'eager'
+    );
+
+    poster.setAttribute(
+      'fetchpriority',
+      'high'
+    );
+
+    let video =
+      qs(
+        '[data-hero-video]',
+        media
+      );
+
+    if (!video) {
+      video =
+        doc.createElement('video');
+
+      video.className =
+        'hero-video';
+
+      video.dataset.heroVideo = '';
+
+      video.autoplay = true;
+      video.muted = true;
+      video.defaultMuted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+
+      video.setAttribute(
+        'muted',
+        ''
+      );
+
+      video.setAttribute(
+        'autoplay',
+        ''
+      );
+
+      video.setAttribute(
+        'loop',
+        ''
+      );
+
+      video.setAttribute(
+        'playsinline',
+        ''
+      );
+
+      video.setAttribute(
+        'aria-hidden',
+        'true'
+      );
+
+      video.setAttribute(
+        'tabindex',
+        '-1'
+      );
+
+      video.poster =
+        poster.getAttribute('src') ||
+        HERO_POSTER;
+
+      const source =
+        doc.createElement('source');
+
+      source.src = HERO_VIDEO;
+      source.type = 'video/mp4';
+
+      video.appendChild(source);
+      media.appendChild(video);
+    }
+
+    let heroVisible = true;
+
+    const canPlay = () =>
+      !reducedMotion?.matches &&
+      heroVisible &&
+      !doc.hidden;
+
+    const playVideo = () => {
+      if (!canPlay()) {
+        video.pause();
+        return;
+      }
+
+      const playback =
+        video.play();
+
+      playback?.catch?.(() => {
+        /*
+         * Browser autoplay restrictions may
+         * reject playback. Poster remains.
+         */
+      });
+    };
+
+    const syncMotion = () => {
+      if (
+        reducedMotion?.matches
+      ) {
+        video.pause();
+
+        media.classList.add(
+          'is-motion-reduced'
+        );
+      } else {
+        media.classList.remove(
+          'is-motion-reduced'
+        );
+
+        playVideo();
+      }
+    };
+
+    video.addEventListener(
+      'loadeddata',
+      () => {
+        media.classList.add(
+          'has-video'
+        );
+      },
+      { once: true }
+    );
+
+    video.addEventListener(
+      'canplay',
+      () => {
+        media.classList.add(
+          'video-ready'
+        );
+
+        playVideo();
+      }
+    );
+
+    video.addEventListener(
+      'error',
+      () => {
+        media.classList.remove(
+          'video-ready'
+        );
+
+        media.classList.add(
+          'video-error'
+        );
+      }
+    );
+
+    if (
+      'IntersectionObserver' in
+      window
+    ) {
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
+            const entry =
+              entries[0];
+
+            if (!entry) return;
+
+            heroVisible =
+              entry.isIntersecting &&
+              entry.intersectionRatio >
+                0.04;
+
+            if (heroVisible) {
+              playVideo();
+            } else {
+              video.pause();
+            }
+          },
+          {
+            threshold: [
+              0,
+              0.04,
+              0.15
+            ]
+          }
+        );
+
+      observer.observe(hero);
+    }
+
+    doc.addEventListener(
+      'visibilitychange',
+      () => {
+        if (doc.hidden) {
+          video.pause();
+        } else {
+          playVideo();
+        }
+      }
+    );
+
+    reducedMotion
+      ?.addEventListener?.(
+        'change',
+        syncMotion
+      );
+
+    syncMotion();
+  };
+
+  /* ============================================================
+     Hero CTA
+     ============================================================ */
+
+  const initHeroCTA = () => {
+    const cta =
+      qs('.hero .btn-dark');
+
+    if (!cta) return;
+
+    cta.classList.add(
+      'hero-cta'
+    );
+
+    if (
+      !qs('.btn-arrow', cta)
+    ) {
+      const arrow =
+        doc.createElement('span');
+
+      arrow.className =
+        'btn-arrow';
+
+      arrow.setAttribute(
+        'aria-hidden',
+        'true'
+      );
+
+      arrow.textContent = '→';
+
+      cta.appendChild(arrow);
+    }
+  };
+
+  /* ============================================================
+     Scroll reveal
+     ============================================================ */
+
+  const initRevealAnimations = () => {
+    const selectors = [
+      '.buyers .copy-block',
+      '.buyers .portrait',
+      '.step-grid article',
+      '.products .kicker',
+      '.products h2',
+      '.product-grid article',
+      '.about .copy-block',
+      '.about .portrait',
+      '.callback-card',
+      '.callback-photo',
+      '.gift-title',
+      '.gift h2',
+      '.gift img',
+      '.faq-intro',
+      '.faq-list article'
+    ];
+
+    const elements =
+      selectors.flatMap(
+        (selector) => qsa(selector)
+      );
+
+    const unique = [
+      ...new Set(elements)
+    ];
+
+    if (!unique.length) return;
+
+    unique.forEach(
+      (element, index) => {
+        element.classList.add(
+          'reveal'
+        );
+
+        element.style.setProperty(
+          '--reveal-delay',
+          `${
+            (index % 6) * 45
+          }ms`
+        );
+      }
+    );
+
+    if (
+      reducedMotion?.matches ||
+      !(
+        'IntersectionObserver' in
+        window
+      )
+    ) {
+      unique.forEach(
+        (element) =>
+          element.classList.add(
+            'is-visible'
+          )
+      );
+
+      return;
+    }
+
+    const observer =
+      new IntersectionObserver(
+        (entries, instance) => {
+          entries.forEach(
+            (entry) => {
+              if (
+                entry.isIntersecting
+              ) {
+                entry.target.classList.add(
+                  'is-visible'
+                );
+
+                instance.unobserve(
+                  entry.target
+                );
+              }
+            }
+          );
+        },
+        {
+          rootMargin:
+            '0px 0px -8% 0px',
+          threshold: 0.08
+        }
+      );
+
+    unique.forEach(
+      (element) =>
+        observer.observe(element)
+    );
+
+    reducedMotion
+      ?.addEventListener?.(
+        'change',
+        (event) => {
+          if (event.matches) {
+            unique.forEach(
+              (element) =>
+                element.classList.add(
+                  'is-visible'
+                )
+            );
+          }
+        }
+      );
+  };
+
+  /* ============================================================
+     Back to top
+     ============================================================ */
+
+  const initBackToTop = () => {
+    const button =
+      doc.createElement('button');
+
+    button.type = 'button';
+    button.className =
+      'back-to-top';
+
+    button.setAttribute(
+      'aria-label',
+      'Back to top'
+    );
+
+    button.setAttribute(
+      'title',
+      'Back to top'
+    );
+
+    button.innerHTML = `
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="m18 15-6-6-6 6"></path>
+      </svg>
+    `;
+
+    body.appendChild(button);
+
+    const update =
+      rafThrottle(() => {
+        button.classList.toggle(
+          'is-visible',
+          window.scrollY > 650
+        );
+      });
+
+    window.addEventListener(
+      'scroll',
+      update,
+      { passive: true }
+    );
+
+    button.addEventListener(
+      'click',
+      () => {
+        window.scrollTo({
+          top: 0,
+          behavior:
+            reducedMotion?.matches
+              ? 'auto'
+              : 'smooth'
+        });
+      }
+    );
+
+    update();
+  };
+
+  /* ============================================================
+     Footer
+     ============================================================ */
+
+  const initFooter = () => {
+    const footer =
+      qs('.site-footer');
+
+    if (!footer) return;
+
+    const copyright =
+      qs('.footer-inner > p', footer);
+
+    if (copyright) {
+      const year =
+        new Date().getFullYear();
+
+      copyright.innerHTML =
+        copyright.innerHTML.replace(
+          /Copyright © \d{4}/i,
+          `Copyright © ${year}`
+        );
+    }
+
+    const logo =
+      qs('.footer-inner > img', footer);
+
+    if (
+      logo &&
+      !qs(
+        '.footer-tagline',
+        footer
+      )
+    ) {
+      const tagline =
+        doc.createElement('span');
+
+      tagline.className =
+        'footer-tagline';
+
+      tagline.textContent =
+        'The Taste of Tradition';
+
+      logo.insertAdjacentElement(
+        'afterend',
+        tagline
+      );
+    }
+  };
+
+  /* ============================================================
+     Placeholder / external link hardening
+     ============================================================ */
+
+  const initLinks = () => {
+    qsa(
+      'a[target="_blank"]'
+    ).forEach((link) => {
+      const current =
+        link.getAttribute('rel') || '';
+
+      const tokens =
+        new Set(
+          current
+            .split(/\s+/)
+            .filter(Boolean)
+        );
+
+      tokens.add('noopener');
+      tokens.add('noreferrer');
+
+      link.setAttribute(
+        'rel',
+        [...tokens].join(' ')
+      );
+    });
+
+    qsa(
+      '.social-row a[href="#"]'
+    ).forEach((link) => {
+      link.classList.add(
+        'is-placeholder'
+      );
+
+      link.setAttribute(
+        'aria-disabled',
+        'true'
+      );
+
+      link.addEventListener(
+        'click',
+        (event) =>
+          event.preventDefault()
+      );
+    });
+
+    const handle =
+      qs('.social-row span');
+
+    if (
+      handle &&
+      /reallygreatsite/i.test(
+        handle.textContent
+      )
+    ) {
+      handle.textContent =
+        'Kampvuur Biltong';
+    }
+  };
+
+  /* ============================================================
+     Callback / WhatsApp
+     ============================================================ */
+
+  const initCallbackForm = () => {
+    const form =
+      qs('#callback-form');
+
+    if (!form) return;
+
+    let status =
+      qs('.form-status', form);
+
+    if (!status) {
+      status =
+        doc.createElement('p');
+
+      status.className =
+        'form-status';
+
+      status.setAttribute(
+        'role',
+        'status'
+      );
+
+      status.setAttribute(
+        'aria-live',
+        'polite'
+      );
+
+      form.appendChild(status);
+    }
+
+    form.addEventListener(
+      'submit',
+      (event) => {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const data =
+          new FormData(form);
+
+        const name =
+          String(
+            data.get('name') || ''
+          ).trim();
+
+        const email =
+          String(
+            data.get('email') || ''
+          ).trim();
+
+        const phone =
+          String(
+            data.get('phone') || ''
+          ).trim();
+
+        const message = [
+          'Hi Kampvuur Biltong, please call me back.',
+          '',
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Contact number: ${phone}`
+        ].join('\n');
+
+        const url =
+          `https://wa.me/${PHONE_NUMBER}` +
+          `?text=${
+            encodeURIComponent(message)
+          }`;
+
+        status.textContent =
+          'Opening WhatsApp…';
+
+        const opened =
+          window.open(
+            url,
+            '_blank',
+            'noopener,noreferrer'
+          );
+
+        if (!opened) {
+          status.textContent =
+            'WhatsApp was blocked by the browser. Please allow pop-ups and try again.';
+        } else {
+          status.textContent =
+            'WhatsApp opened with your callback request.';
+        }
+      }
+    );
+  };
+
+  /* ============================================================
+     Init
+     ============================================================ */
+
+  const init = () => {
+    initBrowserBranding();
+    initTheme();
+    initHeader();
+    initMobileNavigation();
+    initScrollSpy();
+
+    initHeroVideo();
+    initHeroCTA();
+
+    initRevealAnimations();
+    initBackToTop();
+
+    initFooter();
+    initLinks();
+    initCallbackForm();
+  };
+
+  if (
+    doc.readyState === 'loading'
+  ) {
+    doc.addEventListener(
+      'DOMContentLoaded',
+      init,
+      { once: true }
+    );
+  } else {
+    init();
+  }
+})();
