@@ -34,20 +34,57 @@
   </div>
 </header>
 
-<main id="main">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-media" aria-hidden="true"><img src="assets/hero-campfire.webp" alt="" width="1920" height="614" loading="eager" fetchpriority="high"></div>
-    <div class="hero-shade" aria-hidden="true"></div>
-    <div class="hero-content">
-      <h1 id="hero-title">Kampvuur Biltong</h1>
-      <p>Experience authentic South African biltong, cured<br class="desktop-only"> with traditional spices and air-dried to perfection.</p>
-      <a class="btn btn-dark" href="#products">Discover Our Biltong</a>
-    </div>
-    <div class="social-row" aria-label="Social links">
-      <a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="TikTok">tt</a>
-      <span>@reallygreatsite</span>
-    </div>
-  </section>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-media" aria-hidden="true">
+    <!-- Immediate fallback / LCP image -->
+    <img
+      class="hero-poster"
+      src="assets/hero-campfire.webp"
+      alt=""
+      width="1920"
+      height="614"
+      loading="eager"
+      fetchpriority="high"
+    >
+
+    <!-- Kampvuur promotional video -->
+    <video
+      class="hero-video"
+      data-hero-video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="assets/hero-campfire.webp"
+      tabindex="-1"
+    >
+      <source
+        src="images/Kampvuur%20Biltong.mp4"
+        type="video/mp4"
+      >
+    </video>
+  </div>
+
+  <div class="hero-shade" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <h1 id="hero-title">Kampvuur Biltong</h1>
+
+    <p>
+      Experience authentic South African biltong, cured<br class="desktop-only">
+      with traditional spices and air-dried to perfection.
+    </p>
+
+    <a class="btn btn-dark" href="#products">
+      Discover Our Biltong
+    </a>
+  </div>
+
+  <div class="social-row" aria-label="Social links">
+    ...
+  </div>
+</section>
 
   <section class="buyers section-light">
     <div class="wrap two-col">
