@@ -30,10 +30,52 @@ with sync_playwright() as p:
         page.goto(URL, wait_until="networkidle")
 
         # No horizontal overflow at supported breakpoints.
-        assert not page.evaluate(
-            "document.documentElement.scrollWidth > "
-            "document.documentElement.clientWidth"
-        ), f"horizontal overflow at {width}x{height}"
+        overflow = page.evaluate("""
+            () => {
+                const root = document.documentElement;
+                const viewportWidth = root.clientWidth;
+
+                const offenders = [...document.querySelectorAll("body *")]
+                    .map((element) => {
+                        const rect = element.getBoundingClientRect();
+
+                        return {
+                            tag: element.tagName.toLowerCase(),
+                            className:
+                                typeof element.className === "string"
+                                    ? element.className
+                                    : "",
+                            left: Math.round(rect.left * 10) / 10,
+                            right: Math.round(rect.right * 10) / 10,
+                            width: Math.round(rect.width * 10) / 10,
+                            text: (element.textContent || "")
+                                .trim()
+                                .replace(/\\s+/g, " ")
+                                .slice(0, 80),
+                        };
+                    })
+                    .filter(
+                        (item) =>
+                            item.left < -1 ||
+                            item.right > viewportWidth + 1
+                    )
+                    .slice(0, 20);
+
+                return {
+                    clientWidth: viewportWidth,
+                    scrollWidth: root.scrollWidth,
+                    offenders,
+                };
+            }
+        """)
+
+        assert (
+            overflow["scrollWidth"]
+            <= overflow["clientWidth"]
+        ), (
+            f"horizontal overflow at {width}x{height}: "
+            f"{overflow}"
+        )
 
         # Correct semantic primary heading.
         assert page.locator("h1").count() == 1
