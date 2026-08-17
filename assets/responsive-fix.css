@@ -1,0 +1,159 @@
+/*
+ * Kampvuur mobile containment
+ *
+ * Prevent decorative transforms, intrinsic grid sizing and long
+ * text from expanding the document viewport on narrow devices.
+ *
+ * Desktop/Figma geometry is intentionally untouched.
+ */
+
+@media (max-width: 680px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /*
+   * Clip decorative/positioned content at logical page sections.
+   * This stops transformed gift/hero elements from contributing
+   * to document-level horizontal scroll.
+   */
+  .site-header,
+  main,
+  main > section,
+  .site-footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  /*
+   * CSS Grid and Flex items default to min-width:auto, which can
+   * make intrinsic content wider than its track. Explicitly allow
+   * these containers and their children to shrink.
+   */
+  .header-inner,
+  .site-header nav,
+  .two-col,
+  .about-grid,
+  .step-grid,
+  .product-grid,
+  .callback-grid,
+  .faq-grid,
+  .footer-inner,
+  .footer-inner nav {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .header-inner > *,
+  .site-header nav > *,
+  .two-col > *,
+  .about-grid > *,
+  .step-grid > *,
+  .product-grid > *,
+  .callback-grid > *,
+  .faq-grid > *,
+  .footer-inner > *,
+  .footer-inner nav > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /*
+   * Content blocks may shrink rather than force a wider document.
+   */
+  .hero-content,
+  .copy-block,
+  .callback-card,
+  .faq-intro,
+  .faq-list,
+  .product-grid article,
+  .step-grid article {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /*
+   * Long labels/headings should wrap instead of enlarging their
+   * containing grid track.
+   */
+  .copy-block h2,
+  .copy-block p,
+  .strong-caps,
+  .products h2,
+  .product-grid h3,
+  .product-grid p,
+  .callback-card h2,
+  .faq-intro h2,
+  .faq-list h3,
+  .faq-list p,
+  .footer-inner p,
+  .footer-inner nav a {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  /*
+   * Header: make the centre grid column explicitly shrinkable.
+   */
+  .header-inner {
+    grid-template-columns: 88px minmax(0, 1fr) 34px;
+  }
+
+  .site-header nav {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  /*
+   * Mobile content grids must never retain intrinsic desktop
+   * widths.
+   */
+  .two-col,
+  .about-grid,
+  .step-grid,
+  .product-grid,
+  .callback-grid,
+  .faq-grid {
+    width: 100%;
+    grid-template-columns:
+      minmax(0, 1fr);
+  }
+
+  /*
+   * Keep callback controls completely inside the card.
+   */
+  .callback-card input,
+  .callback-card button {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /*
+   * Gift area deliberately contains transformed/absolute artwork.
+   */
+  .gift,
+  .gift-inner {
+    overflow-x: clip;
+  }
+
+  .gift h2,
+  .gift img,
+  .scribble,
+  .gift-title,
+  .call-now {
+    max-width: 100%;
+  }
+
+  /*
+   * Footer links wrap within the mobile viewport.
+   */
+  .footer-inner nav {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

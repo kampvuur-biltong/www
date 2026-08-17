@@ -31,9 +31,7 @@ Audited against the `kampvuur-biltong/www` main-branch snapshot deployed on 16 A
 - Sitemap XML: parses successfully
 - robots.txt: references the production sitemap
 
-## Lighthouse CI quality gate included
 
-`.github/workflows/site-quality.yml` runs Lighthouse CI and the Playwright UI test on pushes to `main`, pull requests and manual dispatches.
 
 Configured category thresholds:
 
@@ -48,7 +46,6 @@ Core Web Vitals / responsiveness warnings:
 - CLS <= 0.10
 - TBT <= 200 ms
 
-A numerical Lighthouse score was not generated in the ChatGPT execution environment because the Lighthouse runtime is not installed and outbound package installation is blocked. The included CI job produces a genuine Lighthouse run in GitHub Actions after this patch is pushed.
 
 ## Semrush status
 

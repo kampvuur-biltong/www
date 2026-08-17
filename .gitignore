@@ -1,6 +1,5 @@
-node_modules/
+﻿node_modules/
 .vercel/
-.lighthouseci/
 playwright-report/
 test-results/
 .DS_Store
