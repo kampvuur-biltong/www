@@ -267,15 +267,14 @@
          HERO
          ======================================================= -->
 
-    <section
-      class="hero"
-      aria-labelledby="hero-title"
-    >
-
-      <div
-        class="hero-media"
-        aria-hidden="true"
+      <section
+        class="hero"
+        aria-label="Kampvuur Biltong promotional video"
       >
+        <div
+          class="hero-media"
+          aria-hidden="true"
+        >
 
         <!--
           Immediate lightweight fallback and LCP image.
@@ -304,56 +303,76 @@
           modern mobile autoplay behaviour.
         -->
 
-        <video
-          class="hero-video"
-          data-hero-video
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          poster="assets/hero-campfire.webp"
-          tabindex="-1"
-          aria-hidden="true"
-        >
-          <source
-            src="images/Kampvuur%20Biltong.mp4"
-            type="video/mp4"
+           <video
+            class="hero-video"
+            data-hero-video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="assets/hero-campfire.webp"
+            tabindex="-1"
+            aria-hidden="true"
           >
-        </video>
+            <source
+              src="images/Kampvuur%20Biltong.mp4"
+              type="video/mp4"
+            >
+          </video>
+        </div>
+      
+        <div
+          class="hero-shade"
+          aria-hidden="true"
+        ></div>
+      </section>
 
-      </div>
-
-
-      <div
-        class="hero-shade"
-        aria-hidden="true"
-      ></div>
-
-
-      <div class="hero-content">
-
-        <h1 id="hero-title">
-          Kampvuur Biltong
-        </h1>
-
-        <p>
-          Experience authentic South African biltong,
-          cured
-          <br class="desktop-only">
-          with traditional spices and air-dried to
-          perfection.
-        </p>
-
-        <a
-          class="btn btn-dark"
-          href="#products"
-        >
-          Discover Our Biltong
-        </a>
-
-      </div>
-
+      <!-- =========================================================
+           Hero message divider
+           ========================================================= -->
+      
+      <section
+        class="hero-divider"
+        aria-labelledby="hero-title"
+      >
+        <div class="wrap hero-divider-inner">
+      
+          <div class="hero-divider-copy">
+      
+            <p class="hero-divider-eyebrow">
+              The Taste of Tradition
+            </p>
+      
+            <h1 id="hero-title">
+              Kampvuur Biltong
+            </h1>
+      
+            <p class="hero-divider-description">
+              Experience authentic South African biltong,
+              cured with traditional spices and air-dried
+              to perfection.
+            </p>
+      
+          </div>
+      
+          <a
+            class="btn btn-dark hero-cta"
+            href="#products"
+          >
+            <span>
+              Discover Our Biltong
+            </span>
+      
+            <span
+              class="btn-arrow"
+              aria-hidden="true"
+            >
+              →
+            </span>
+          </a>
+      
+        </div>
     </section>
 
 
